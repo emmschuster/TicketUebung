@@ -4,29 +4,17 @@ abstract class Ticket {
 	private int basispreis;
 	protected double ticketpreis;
 
-	abstract void berechneTicketpreis();
-
-	public void ausgabe() {
-		System.out.println("Name der Veranstaltung : " + veranstaungsname);
-		System.out.println("Ort : " + veranstalungsort);
-		System.out.println("Preis eines Tickets : " + ticketpreis);
+	public Ticket(String ort, String name, int preis) {
+		veranstalungsort=ort;
+		veranstaungsname=name;
+		basispreis=preis;
 	}
+	
+	abstract double berechneTicketpreis();
+
+	abstract void ausgabe();
 
 	public int getBasispreis() {
 		return basispreis;
 	}
 }
-
-//
-//}
-//public void setBasispreis(int x) {
-//	basispreis=x;
-
-//- Veranstaltungsort
-//- Veranstaltungsname
-//- Basispreis
-//- Ticketpreis
-
-//public class Sportticket extends Ticket{
-//	
-//}
