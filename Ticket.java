@@ -12,8 +12,12 @@ abstract class Ticket {
 	
 	abstract double berechneTicketpreis();
 
-	abstract void ausgabe();
-
+	public void ausgabe() {
+		System.out.println("Name der Veranstaltung : " + veranstaungsname);
+		System.out.println("Ort : " + veranstalungsort);
+		System.out.println("Preis eines Tickets : " + ticketpreis);
+	}
+	
 	public int getBasispreis() {
 		return basispreis;
 	}

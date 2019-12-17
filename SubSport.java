@@ -3,11 +3,13 @@ public class SubSport extends Ticket{
 	private final int KOSTENALGEMEIN = 1200;
 	private final double MWST=0.2;
 	private final double MANNSCHAFTKOSTEN=1000;
-	private String vort,vname;
+	public String team1, team2;
 
-
-	public SubSport(String ort, String name, int preis) {
+	public SubSport(String ort, String name, int preis, String mannsch1, String Mannsch2) {
 		super(ort, name, preis);
+		team1=mannsch1;
+		team2=Mannsch2;
+		System.out.println("Es spielen "+team1+" gegen "+team2+" !!!");
 	}
 	
 	public double berechneTicketpreis() {
@@ -15,9 +17,4 @@ public class SubSport extends Ticket{
 		return ticketpreis;
 	}
 	
-	public void ausgabe() {
-		System.out.println("Name der Veranstaltung : " + vname);
-		System.out.println("Ort : " + vort);
-		System.out.println("Preis eines Tickets : " + this.ticketpreis);
-	}
 }
