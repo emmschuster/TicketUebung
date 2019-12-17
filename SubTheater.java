@@ -11,11 +11,11 @@ public class SubTheater extends Ticket{
 		kostenallgemein=preis;
 		vorstellungssaal=saal;
 		ausgabe();
-		System.out.println("Die Vorsteööung befindet sich im Saal "+saal);
+		System.out.println("Die Vorstellung befindet sich im Saal "+saal);
 	}
 	
 	public double berechneTicketpreis() {
-		this.ticketpreis=((kostenallgemein+ACTORKOSTEN)/ANZTICKETS)*MWST;
-		return ticketpreis;
+		this.ticketpreis=((kostenallgemein+ACTORKOSTEN)/ANZTICKETS)*MWST*100;
+		return Math.round(ticketpreis);
 	}
 }

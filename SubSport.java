@@ -15,8 +15,8 @@ public class SubSport extends Ticket{
 	}
 	
 	public double berechneTicketpreis() {
-		this.ticketpreis=((kostenallgemein+MANNSCHAFTKOSTEN)/ANZTICKETS)*MWST; 	
-		return ticketpreis;
+		this.ticketpreis=((kostenallgemein+MANNSCHAFTKOSTEN)/ANZTICKETS)*MWST*100; 	
+		return Math.round(ticketpreis);
 	}
 	
 }

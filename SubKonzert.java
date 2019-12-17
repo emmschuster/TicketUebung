@@ -16,7 +16,7 @@ public class SubKonzert extends Ticket{
 	}
 	
 	public double berechneTicketpreis() {
-		this.ticketpreis=((kostenallgemein+BANDKOSTEN)/ANZTICKETS)*MWST; 		
-		return ticketpreis;
+		this.ticketpreis=((kostenallgemein+BANDKOSTEN)/ANZTICKETS)*MWST*100; 		
+		return Math.round(ticketpreis);
 	}
 }
