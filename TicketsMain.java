@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class TicketsMain {
 	private static int x;
 	public static void main(String[] args) {
-		//einlesen();
+		einlesen();
 //		SubKonzert t=new SubKonzert("Prag","5FDP",4);
 //		System.out.println(t);
 	}
