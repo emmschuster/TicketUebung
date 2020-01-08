@@ -1,22 +1,30 @@
 public class SubKonzert extends Ticket{
 
 	private final int ANZTICKETS = 1000;
-	private int kostenallgemein;
+	private double kostenallgemein;
 	private final double MWST=0.2;
 	private final double BANDKOSTEN=700;
-	private int anzBands;
+	private double ticketpreis;
+ 
 
-
-	public SubKonzert(String ort, String name, int preis, int bands) {
+	public SubKonzert(String ort, String name, double preis) {
 		super(ort, name, preis);
 		kostenallgemein=preis;
-		anzBands=bands;
+		System.out.println("Konzert");
+		System.out.println("=======");
 		ausgabe();
-		System.out.println("Es spielen "+anzBands+" Bands an diesem Abend");
 	}
 	
 	public double berechneTicketpreis() {
 		this.ticketpreis=((kostenallgemein+BANDKOSTEN)/ANZTICKETS)*MWST*100; 		
 		return Math.round(ticketpreis);
+	}
+	
+	public double getPreisKonzert() {
+		return ticketpreis;
+	}
+	
+	public double getPreis() {
+		return ticketpreis;
 	}
 }

@@ -1,21 +1,26 @@
 public class SubTheater extends Ticket{
 	private final int ANZTICKETS = 1000;
-	private int kostenallgemein;
+	private double kostenallgemein;
 	private final double MWST=0.2;
 	private final double ACTORKOSTEN=1500;
 	public int vorstellungssaal;
+	private double ticketpreis;
 
 
-	public SubTheater(String ort, String name, int preis, int saal) {
+	public SubTheater(String ort, String name, double preis) {
 		super(ort, name, preis);
 		kostenallgemein=preis;
-		vorstellungssaal=saal;
+		System.out.println("Theater");
+		System.out.println("=======");
 		ausgabe();
-		System.out.println("Die Vorstellung befindet sich im Saal "+saal);
 	}
 	
 	public double berechneTicketpreis() {
 		this.ticketpreis=((kostenallgemein+ACTORKOSTEN)/ANZTICKETS)*MWST*100;
 		return Math.round(ticketpreis);
+	}
+	
+	public double getPreis() {
+		return ticketpreis;
 	}
 }
