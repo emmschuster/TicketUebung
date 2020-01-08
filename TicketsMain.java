@@ -10,7 +10,9 @@ public class TicketsMain {
 		shop.bestellen(t1);
 
 		System.out.println("Anz Tickets zum auswählen "+shop.getAnz());
-		System.out.println("guenstigstes ticket:"+shop.getGunstigstes());
-		System.out.println("teuerstes ticket:"+shop.getTeuerstes());
+		System.out.println("\nguenstigstes ticket:");
+		shop.getGunstigstes();
+		System.out.println("teuerstes ticket:");
+		shop.getTeuerstes();
 	}
 }

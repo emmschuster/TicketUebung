@@ -1,30 +1,39 @@
 import java.util.ArrayList;
 
 public class TicketShop {
-	ArrayList<Ticket> meineListe = new ArrayList<Ticket>(); 
+	ArrayList<Ticket> meineListe = new ArrayList<Ticket>();
 
-	public void bestellen (Ticket x) {
+	public void bestellen(Ticket x) {
 		meineListe.add(x);
 	}
+
 	public int getAnz() {
 		return meineListe.size();
 	}
-	public double getGunstigstes() {
-		double teuer=500;
-		for (int i = 0; i<=getAnz(); i++) {
-			if (meineListe.get(i).getPreis() < teuer) {
-				teuer=meineListe.get(i).getPreis();
+
+	public void getGunstigstes() {
+		Ticket billigstes = meineListe.get(0);
+		for (int i = 1; i < meineListe.size(); i++) { // mit 1 starten, weil wir mit einer vorherigen Karte vergleichen
+			Ticket currentTicket = meineListe.get(i);
+			double cheapestTicketPrice = billigstes.getTicketPrice();
+			double currentTicketPrice = currentTicket.getTicketPrice();
+			if (currentTicketPrice < cheapestTicketPrice) {
+				billigstes = meineListe.get(i);
 			}
 		}
-		return teuer;
+		billigstes.ausgabe();
 	}
-	public double getTeuerstes() {
-		double billig=0;
-		for (int i = 0; i<=getAnz(); i++) {
-			if (meineListe.get(i).getPreis() > billig) {
-				billig=meineListe.get(i).getPreis();
+
+	public void getTeuerstes() {
+		Ticket teuerstes = meineListe.get(0);
+		for (int i = 1; i < meineListe.size(); i++) { // mit 1 starten, weil wir mit einer vorherigen Karte vergleichen
+			Ticket currentTicket = meineListe.get(i);
+			double cheapestTicketPrice = teuerstes.getTicketPrice();
+			double currentTicketPrice = currentTicket.getTicketPrice();
+			if (currentTicketPrice > cheapestTicketPrice) {
+				teuerstes = meineListe.get(i);
 			}
 		}
-		return billig;
+		teuerstes.ausgabe();
 	}
 }
